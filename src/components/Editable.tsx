@@ -76,9 +76,10 @@ interface EditableProps {
   children: string;
   className?: string;
   multiline?: boolean;
+  style?: React.CSSProperties;
 }
 
-export function Editable({ id, as = "span", children, className, multiline }: EditableProps) {
+export function Editable({ id, as = "span", children, className, multiline, style }: EditableProps) {
   const { on } = useEditMode();
   const [value, setValue] = useState<string>(children);
   const ref = useRef<HTMLElement | null>(null);
