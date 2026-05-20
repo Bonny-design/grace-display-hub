@@ -104,6 +104,7 @@ export function Editable({ id, as = "span", children, className, multiline, styl
       contentEditable={on}
       suppressContentEditableWarning
       onBlur={save}
+      style={style}
       onKeyDown={(e: React.KeyboardEvent) => {
         if (!multiline && e.key === "Enter") { e.preventDefault(); (e.target as HTMLElement).blur(); }
       }}
